@@ -1,0 +1,35 @@
+<!-- Tentativo fallito male di binding su JS vanillla -->
+
+<div id="app">
+    <h1 id="titolone"></h1>
+    <h2 id="titoletto">Benvenuto</h2>
+    <span id="cheannosiamo">Ricorda che siamo nel</span>
+    <br>
+    <input id="inputMessaggio" value="">
+</div>
+
+<script>
+
+const anno = 2023;
+let message = 'Hello Vue!';
+const utente = 'Luca';
+
+const input = document.getElementById("inputMessaggio");
+
+document.getElementById("titolone").innerText = `${message}`;
+document.getElementById("titoletto").innerText += ` ${utente}`;
+document.getElementById("cheannosiamo").innerText += ` ${anno}`;
+input.value = `${message}`;
+
+input.addEventListener("keydown", (event)=>{ //oppure change 
+    const valore = input.value; // + event.key filtrato ecc..
+    console.log("Nuovo valore: ", valore);
+    message = valore;
+    document.getElementById("titolone").innerText = `${message}`;
+
+});
+
+
+
+
+</script>
